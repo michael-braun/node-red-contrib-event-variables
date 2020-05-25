@@ -1,0 +1,30 @@
+{
+  "name": "@mbraun/node-red-contrib-event-variables",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michael-braun/node-red-contrib-event-variables.git"
+  },
+  "author": "Michael Braun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michael-braun/node-red-contrib-event-variables/issues"
+  },
+  "homepage": "https://github.com/michael-braun/node-red-contrib-event-variables#readme",
+  "node-red": {
+    "nodes": {
+      "event-variable-accessor": "src/nodes/event-variable-accessor/event-variable-accessor.js",
+      "event-variable-listener": "src/nodes/event-variable-listener/event-variable-listener.js",
+      "event-variable-mutator": "src/nodes/event-variable-mutator/event-variable-mutator.js",
+      "config-event-variable": "src/nodes/config-event-variable/config-event-variable.js"
+    }
+  },
+  "dependencies": {
+    "events": "3.1.0"
+  }
+}

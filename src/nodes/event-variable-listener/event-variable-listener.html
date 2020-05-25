@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('event-variable-listener',{
+        category: 'EventVariables',
+        color: '#a6bbcf',
+        defaults: {
+            name: {
+                value:"",
+            },
+            variable: {
+                value: "",
+                type: "config-event-variable",
+            },
+        },
+        name: 'Listener',
+        inputs: 0,
+        outputs: 1,
+        label: function() {
+            if (this.name) {
+                return this.name;
+            }
+
+            const configNode = RED.nodes.node(this.variable);
+
+            if (configNode && configNode.name) {
+                return `${configNode.name} - Listener`;
+            }
+
+            return 'Listener';
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="event-variable-listener">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Variable</label>
+        <input type="text" id="node-input-variable" placeholder="Server">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="event-variable-listener">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
