@@ -4,8 +4,9 @@ module.exports = function(RED) {
     function EventVariableAccessor(config) {
         RED.nodes.createNode(this, config);
         const node = this;
+
         node.on('input', function(msg) {
-            const data = DataStore[this.variable];
+            const data = DataStore[config.variable];
 
             if (data) {
                 msg.actor = data.actor;

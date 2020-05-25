@@ -5,12 +5,19 @@ module.exports = function(RED) {
         RED.nodes.createNode(this, config);
         const node = this;
 
-        EventEmitter.on(`${this.variable}_update`, (data) => {
+        const handler = (data) => {
             node.send({
                 payload: data.value,
                 actor: data.actor,
             });
-        });
+        };
+
+        EventEmitter.on(`${config.variable}_update`, handler);
+
+        node.on('close', () => {
+            EventEmitter.off(`${config.variable}_update`, handler);
+        })
     }
+
     RED.nodes.registerType('event-variable-listener', EventVariableListener);
 }
