@@ -8,7 +8,12 @@ module.exports = function(RED) {
             const data = DataStore[this.variable];
 
             if (data) {
+                msg.actor = data.actor;
                 msg.payload = data.value;
+                node.send(msg);
+            } else {
+                msg.actor = undefined;
+                msg.payload = undefined;
                 node.send(msg);
             }
         });

@@ -8,12 +8,8 @@ module.exports = function(RED) {
         EventEmitter.on(`${this.variable}_update`, (data) => {
             node.send({
                 payload: data.value,
+                actor: data.actor,
             });
-        });
-
-        node.on('input', function(msg) {
-            msg.payload = msg.payload.toLowerCase();
-            node.send(msg);
         });
     }
     RED.nodes.registerType('event-variable-listener', EventVariableListener);
