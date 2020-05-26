@@ -34,5 +34,17 @@
 </script>
 
 <script type="text/html" data-help-name="event-variable-interceptor-response">
-    <p>A simple node that converts the message payloads into all lower-case characters</p>
+    <p>A node that has to be used to respond to an event-variable interception. </p>
+
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">string | object | buffer</span>
+        </dt>
+        <dd> The new value that the event-variable should be set to. </dd>
+        <dt class="optional">actor <span class="property-type">string</span></dt>
+        <dd> The actor that should be used for the change action.</dd>
+        <dt>interceptedEventVariable <span class="property-type">string</span></dt>
+        <dd> The internal id of the event-variable. Should not be modified. </dd>
+    </dl>
 </script>

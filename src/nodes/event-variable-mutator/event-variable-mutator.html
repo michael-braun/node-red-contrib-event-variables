@@ -42,5 +42,15 @@
 </script>
 
 <script type="text/html" data-help-name="event-variable-mutator">
-    <p>A simple node that converts the message payloads into all lower-case characters</p>
+    <p>A node that changes a event-variable to the payload value. An optional actor could be set too</p>
+
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">string | object | buffer</span>
+        </dt>
+        <dd> The new value that the event-variable should be set to. </dd>
+        <dt class="optional">actor <span class="property-type">string</span></dt>
+        <dd> The actor that requests the change action.</dd>
+    </dl>
 </script>
