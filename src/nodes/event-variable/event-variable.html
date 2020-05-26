@@ -1,0 +1,53 @@
+<script type="text/javascript">
+    RED.nodes.registerType('event-variable',{
+        category: 'EventVariables',
+        color: '#3FADB5',
+        defaults: {
+            name: {
+                value:"",
+            },
+            variable: {
+                value: "",
+                type: "config-event-variable",
+            },
+        },
+        paletteLabel: 'EventVariable',
+        inputs: 1,
+        outputs: 1,
+        label: function() {
+            if (this.name) {
+                return this.name;
+            }
+
+            const configNode = RED.nodes.node(this.variable);
+
+            if (configNode && configNode.name) {
+                return `${configNode.name} - EventVariable`;
+            }
+
+            return 'EventVariable';
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="event-variable">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Variable</label>
+        <input type="text" id="node-input-variable" placeholder="Server">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="event-variable">
+    <p>This node provides an interface to get an event-variable for future use in a mutator. </p>
+    <p>Everything else inside of the message-object is preserved. </p>
+
+    <h3>Outputs</h3>
+    <dl class="message-properties">
+        <dt>eventVariableId <span class="property-type">string</span></dt>
+        <dd> The id of the eventVariable.</dd>
+    </dl>
+</script>

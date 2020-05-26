@@ -6,7 +6,7 @@ module.exports = function(RED) {
         const node = this;
 
         node.on('input', function(msg) {
-            const data = DataStore[config.variable];
+            const data = DataStore[msg.eventVariableId || config.variable];
 
             if (data) {
                 msg.actor = data.actor;

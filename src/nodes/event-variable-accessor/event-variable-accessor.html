@@ -9,6 +9,7 @@
             variable: {
                 value: "",
                 type: "config-event-variable",
+                required: false,
             },
         },
         paletteLabel: 'Accessor',
@@ -56,5 +57,7 @@
         <dd> The value of the event-variable. </dd>
         <dt class="optional">actor <span class="property-type">string</span></dt>
         <dd> The actor that requests the change action.</dd>
+        <dt class="optional">eventVariableId <span class="property-type">string</span></dt>
+        <dd> The id of the event-variable that should be read (overrides the variable set in the node-properties)</dd>
     </dl>
 </script>

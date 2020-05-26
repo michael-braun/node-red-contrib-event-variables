@@ -6,7 +6,7 @@ module.exports = function(RED) {
         const node = this;
 
         node.on('input', (msg) => {
-            changeState(config.variable, msg.payload, msg.actor || null);
+            changeState(msg.eventVariableId || config.variable, msg.payload, msg.actor || null);
         });
     }
 

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/michael-braun/node-red-contrib-event-variables#readme",
   "node-red": {
     "nodes": {
+      "event-variable": "src/nodes/event-variable/event-variable.js",
       "event-variable-accessor": "src/nodes/event-variable-accessor/event-variable-accessor.js",
       "event-variable-listener": "src/nodes/event-variable-listener/event-variable-listener.js",
       "event-variable-mutator": "src/nodes/event-variable-mutator/event-variable-mutator.js",
