@@ -21,6 +21,7 @@
       "event-variable-accessor": "src/nodes/event-variable-accessor/event-variable-accessor.js",
       "event-variable-listener": "src/nodes/event-variable-listener/event-variable-listener.js",
       "event-variable-mutator": "src/nodes/event-variable-mutator/event-variable-mutator.js",
+      "event-variable-interceptor": "src/nodes/event-variable-interceptor/event-variable-interceptor.js",
       "config-event-variable": "src/nodes/config-event-variable/config-event-variable.js"
     }
   },
