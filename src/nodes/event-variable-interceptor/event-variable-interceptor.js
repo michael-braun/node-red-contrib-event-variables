@@ -6,19 +6,10 @@ module.exports = function(RED) {
         const node = this;
 
         const handler = (data) => {
-            const oldData = DataStore[config.variable];
-
             node.send({
-                payload: {
-                    new: {
-                        value: data.value,
-                        actor: data.actor,
-                    },
-                    old: {
-                        value: oldData.value,
-                        actor: oldData.actor,
-                    },
-                },
+                interceptedEventVariable: config.variable,
+                payload: data.value,
+                actor: data.actor,
             });
         };
 

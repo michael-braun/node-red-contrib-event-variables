@@ -1,19 +1,15 @@
 <script type="text/javascript">
-    RED.nodes.registerType('event-variable-interceptor',{
+    RED.nodes.registerType('event-variable-interceptor-response',{
         category: 'EventVariables',
         color: '#a6bbcf',
         defaults: {
             name: {
                 value:"",
             },
-            variable: {
-                value: "",
-                type: "config-event-variable",
-            },
         },
         name: 'Listener',
-        inputs: 0,
-        outputs: 1,
+        inputs: 1,
+        outputs: 0,
         label: function() {
             if (this.name) {
                 return this.name;
@@ -22,25 +18,21 @@
             const configNode = RED.nodes.node(this.variable);
 
             if (configNode && configNode.name) {
-                return `${configNode.name} - Interceptor`;
+                return `${configNode.name} - Interceptor (Response)`;
             }
 
-            return 'Interceptor';
+            return 'Interceptor (Response)';
         }
     });
 </script>
 
-<script type="text/html" data-template-name="event-variable-interceptor">
+<script type="text/html" data-template-name="event-variable-interceptor-response">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
-    <div class="form-row">
-        <label for="node-input-variable"><i class="icon-tag"></i> Variable</label>
-        <input type="text" id="node-input-variable" placeholder="Server">
-    </div>
 </script>
 
-<script type="text/html" data-help-name="event-variable-interceptor1">
+<script type="text/html" data-help-name="event-variable-interceptor-response">
     <p>A simple node that converts the message payloads into all lower-case characters</p>
 </script>
