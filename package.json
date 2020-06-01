@@ -16,6 +16,9 @@
     "url": "https://github.com/michael-braun/node-red-contrib-event-variables/issues"
   },
   "homepage": "https://github.com/michael-braun/node-red-contrib-event-variables#readme",
+  "publishConfig": {
+    "registry": "https://npm.michael-braun.me"
+  },
   "node-red": {
     "nodes": {
       "event-variable": "src/nodes/event-variable/event-variable.js",
